@@ -31,7 +31,7 @@ func newTailer(replicationSlot string) client.Reader {
 	return &Tailer{newReader(), replicationSlot}
 }
 
-// Tail does the things
+// Read: Tail does the things
 func (t *Tailer) Read(resumeMap map[string]client.MessageSet, filterFn client.NsFilterFunc) client.MessageChanFunc {
 	return func(s client.Session, done chan struct{}) (chan client.MessageSet, error) {
 		readFunc := t.reader.Read(resumeMap, filterFn)

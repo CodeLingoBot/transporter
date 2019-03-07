@@ -71,7 +71,7 @@ func (l logger) Output(calldepth int, s string) error {
 	return nil
 }
 
-// Debug logs a message at level Debug on the standard logger.
+// Debugln: Debug logs a message at level Debug on the standard logger.
 func (l logger) Debugln(args ...interface{}) {
 	l.entry.Debugln(args...)
 }
@@ -81,7 +81,7 @@ func (l logger) Debugf(format string, args ...interface{}) {
 	l.entry.Debugf(format, args...)
 }
 
-// Info logs a message at level Info on the standard logger.
+// Infoln: Info logs a message at level Info on the standard logger.
 func (l logger) Infoln(args ...interface{}) {
 	l.entry.Infoln(args...)
 }
@@ -91,7 +91,7 @@ func (l logger) Infof(format string, args ...interface{}) {
 	l.entry.Infof(format, args...)
 }
 
-// Error logs a message at level Error on the standard logger.
+// Errorln: Error logs a message at level Error on the standard logger.
 func (l logger) Errorln(args ...interface{}) {
 	l.entry.Errorln(args...)
 }

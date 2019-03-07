@@ -73,7 +73,7 @@ type MockWriter struct {
 	MsgCount int
 }
 
-// Writer satisfies the Writer interface.
+// Write: Writer satisfies the Writer interface.
 func (w *MockWriter) Write(msg message.Msg) func(Session) (message.Msg, error) {
 	return func(s Session) (message.Msg, error) {
 		w.MsgCount++
@@ -88,7 +88,7 @@ func (w *MockWriter) Write(msg message.Msg) func(Session) (message.Msg, error) {
 type MockErrWriter struct {
 }
 
-// Writer satisfies the Writer interface.
+// Write: Writer satisfies the Writer interface.
 func (w *MockErrWriter) Write(msg message.Msg) func(Session) (message.Msg, error) {
 	return func(Session) (message.Msg, error) {
 		return msg, ErrMockWrite
